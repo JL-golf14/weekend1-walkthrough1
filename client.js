@@ -15,6 +15,7 @@ $(document).ready(function(){
        '<td>'+ idNumber + '</td>' +
        '<td>' + jobTitle + '</td>' +
        '<td>' + annualSalary + '</td>' +
+       '<td><button class="deleteEmployeeButton">Delete ' + firstName + '</button></td>' +
        '</tr>'
 
  );
@@ -26,8 +27,21 @@ $('#monthlyExpenses').text(totalMonthlyExpenses);
 
 
 
-
-
-
   });
+
+$('#employeeTableBody').on('click','.deleteEmployeeButton', function(){
+console.log("button WAs Clicked");
+$(this).parent().parent().remove();
+
+
+});
+
+
+
+
+
+
+
+
+
 });

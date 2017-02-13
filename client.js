@@ -1,4 +1,4 @@
-$(document).ready(function)(){
+$(document).ready(function(){
   $('#submitNewEmployee').on('click', function(){
   var firstName = $('#firstName').val();
   var lastName = $('#lastName').val();
@@ -17,12 +17,16 @@ $(document).ready(function)(){
        '<td>' + annualSalary + '</td>' +
        '</tr>'
 
+ );
+// monthly salary expenses
+var newMonthlyExpenses = annualSalary / 12;
+var previousSalaryTotal = $('#monthlyExpenses').text();
+var totalMonthlyExpenses = parseFloat(previousSalaryTotal) + newMonthlyExpenses;
+$('#monthlyExpenses').text(totalMonthlyExpenses);
 
 
 
 
-
-   );
 
 
   });

@@ -15,7 +15,7 @@ $(document).ready(function(){
        '<td>'+ idNumber + '</td>' +
        '<td>' + jobTitle + '</td>' +
        '<td>' + annualSalary + '</td>' +
-       '<td><button class="deleteEmployeeButton">Delete ' + firstName + '</button></td>' +
+       '<td><button class="deleteEmployeeButton" data-salary="' + annualSalary + ' ">Delete ' + firstName + '</button></td>' +
        '</tr>'
 
  );
@@ -33,7 +33,7 @@ $('.employeeFormInput').val('');
 $('#employeeTableBody').on('click','.deleteEmployeeButton', function(){
 // console.log("button WAs Clicked");
 //removing employee salary from table
-var deletedEmployeeSalary = $(this).parent().prev().text();
+var deletedEmployeeSalary = $(this).data('salary');
 var deletedEmployeeExpenses = deletedEmployeeSalary / 12;
 var previousMonthlyExpenses = $('#monthlyExpenses').text();
 var newTotalMonthlyExpenses = previousMonthlyExpenses - deletedEmployeeExpenses;

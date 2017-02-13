@@ -25,13 +25,22 @@ var previousSalaryTotal = $('#monthlyExpenses').text();
 var totalMonthlyExpenses = parseFloat(previousSalaryTotal) + newMonthlyExpenses;
 $('#monthlyExpenses').text(totalMonthlyExpenses);
 
-
+//clear out input boxes
+$('.employeeFormInput').val('');
 
   });
 
 $('#employeeTableBody').on('click','.deleteEmployeeButton', function(){
-console.log("button WAs Clicked");
+// console.log("button WAs Clicked");
+//removing employee salary from table
+var deletedEmployeeSalary = $(this).parent().prev().text();
+var deletedEmployeeExpenses = deletedEmployeeSalary / 12;
+var previousMonthlyExpenses = $('#monthlyExpenses').text();
+var newTotalMonthlyExpenses = previousMonthlyExpenses - deletedEmployeeExpenses;
+$('#monthlyExpenses').text(newTotalMonthlyExpenses);
+// deleting employee row from table    //  order matters
 $(this).parent().parent().remove();
+
 
 
 });

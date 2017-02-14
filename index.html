@@ -9,18 +9,21 @@
 <body>
   <h1>weekend1 walkthrough</h1>
 
-  <label type="text" name="firstName"></label>
-  <input type="text" placeholder="first Name" id="firstName" class="employeeFormInput"></input>
-  <label type="text" name="lastName"></label>
-  <input type="text" placeholder="Last Name" id="lastName" class="employeeFormInput"></input>
-  <label type="text" name="idNumber"></label>
-  <input type="number" placeholder="ID Number" id="idNumber" class="employeeFormInput"></input>
-  <label type="text" name="jobTitle"></label>
-  <input type="text" placeholder="Job Title" id="jobTitle" class="employeeFormInput"></input>
-  <label type="text" name="annualSalary"></label>
-  <input type="number" placeholder="Annual Salary" id="annualSalary" class="employeeFormInput"></input>
-  <button type="button" id="submitNewEmployee">Submit</button>
 
+  <form>
+
+    <label type="text" name="firstName"></label>
+    <input type="text" name="firstName" placeholder="first Name" id="firstName" class="employeeFormInput"></input>
+    <label type="text" name="lastName"></label>
+    <input type="text" name="lastName" placeholder="Last Name" id="lastName" class="employeeFormInput"></input>
+    <label type="text" name="idNumber"></label>
+    <input type="number" name="idNumber" placeholder="ID Number" id="idNumber" class="employeeFormInput"></input>
+    <label type="text" name="jobTitle"></label>
+    <input type="text" name="jobTitle"placeholder="Job Title" id="jobTitle" class="employeeFormInput"></input>
+    <label type="text" name="annualSalary"></label>
+    <input type="number" name="annualSalary" placeholder="Annual Salary" id="annualSalary" class="employeeFormInput"></input>
+    <button type="submit" >Submit</button>
+  </form>
   <h3>Employee List</h3>
   <table>
     <thead>
@@ -35,10 +38,10 @@
       </tr>
     </thead>
 
-  <tbody id="employeeTableBody">
-</tbody>
-</table>
-<h3 >Monthly Salary Expenditures: <span id="monthlyExpenses">0</span></h3>
+    <tbody id="employeeTableBody">
+    </tbody>
+  </table>
+  <h3 >Monthly Salary Expenditures: <span id="monthlyExpenses">0</span></h3>
 
-  </body>
-  </html>
+</body>
+</html>

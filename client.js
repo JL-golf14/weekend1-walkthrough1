@@ -1,5 +1,24 @@
 $(document).ready(function(){
-  $('#submitNewEmployee').on('click', function(){
+  $('form').on('submit', function(event){
+    event.preventDefault();  //  Do not bring us to a new page   used in forms!!!
+//  create an array of the inputs, the inputs are converted to objects
+// objects have two properties name and value
+// e.g. name:  'first name'   value:  "Jeremy"
+    console.log('form values: ' , $(this).serializeArray());
+
+    var submissionArray = $(this).serializeArray();        //  [{},{},{}]
+    var newEmployeeObject = {};                // {firstName: "luke",  lastName: 'schlangen'}
+
+    submissionArray.forEach(function(inputField){
+      // first time newEmployeeObject is empty {}
+      newEmployeeObject[inputField.name] = inputField.value;
+      // newEmployeeObject.firstName = Luke;
+      // newEmployeeObject is {firstName: "Luke"}
+      // 2nd time through newEmployeeObject is {firstName: 'luke', lastName: 'schlangen'}
+
+    });
+    console.log("newEmployeeObject:", newEmployeeObject);
+    
   var firstName = $('#firstName').val();
   var lastName = $('#lastName').val();
   var idNumber = $('#idNumber').val();
@@ -42,15 +61,5 @@ $('#monthlyExpenses').text(newTotalMonthlyExpenses);
 $(this).parent().parent().remove();
 
 
-
 });
-
-
-
-
-
-
-
-
-
 });
